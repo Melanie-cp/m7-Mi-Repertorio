@@ -15,7 +15,18 @@ const create = async ({ titulo, artista, tono }) => {
     return rows[0]
 }
 
+const remove = async (id) => {
+    const query = {
+        text: `DELETE FROM CANCIONES WHERE ID = $1
+        RETURNING *`,
+        values: [id]
+    }
+    const { rows } = await pool.query(query)
+    return rows[0]
+}
+
 export const Canciones = {
     findAll,
-    create
+    create,
+    remove
 }

@@ -28,6 +28,17 @@ app.post('/cancion', async (req, res) => {
     }
 })
 
+app.delete('/cancion', async (req, res) => {
+    try {
+        const { id } = req.query
+        const cancion = await Canciones.remove(id)
+        return res.json(cancion)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json(error)
+    }
+})
+
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`Servidor encendido http://localhost:${PORT}`)
