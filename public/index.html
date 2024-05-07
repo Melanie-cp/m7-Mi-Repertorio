@@ -98,8 +98,10 @@
           <td>${c.artista}</td>
           <td>${c.tono}</td>
           <td>
-            <button class="btn btn-warning" onclick="prepararCancion(${i},'${c.id}')">Editar</button>
-            <button class="btn btn-danger" onclick="eliminarCancion(${i},'${c.id}')">Eliminar</button>
+            <button class="btn btn-warning" onclick="prepararCancion(${i},'${c.id
+          }')">Editar</button>
+            <button class="btn btn-danger" onclick="eliminarCancion(${i},'${c.id
+          }')">Eliminar</button>
           </td>
         </tr>
       `;
@@ -109,7 +111,6 @@
     artista.value = "";
     tono.value = "";
   }
-
 
   function nuevaCancion() {
     cancion;
